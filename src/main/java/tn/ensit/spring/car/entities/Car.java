@@ -3,6 +3,7 @@ package tn.ensit.spring.car.entities;
 import tn.ensit.spring.person.entities.Person;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -14,17 +15,11 @@ public class Car {
     private Long id;
     private String brand;
 
-    @ManyToOne()
+    @ManyToMany()
     @JoinColumn(name = "person_id")
-    private Person person;
+    private List<Person> persons;
 
-    public Person getPerson() {
-        return person;
-    }
 
-    public void setPerson(Person person) {
-        this.person = person;
-    }
 
     public Car() {
     }

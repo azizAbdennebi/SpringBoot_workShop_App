@@ -14,8 +14,13 @@ public class Person {
     private Long id;
     @Column(name = "nom")
     private String name;
-    @OneToMany(mappedBy = "person")
-    @JoinColumn(name = "car_id")
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "car_Person",
+    joinColumns=@JoinColumn(name = "car_Id" ,referencedColumnName = "id"),
+    inverseJoinColumns = @JoinColumn(
+            name = "person_Id",
+            referencedColumnName = "id"
+    ))
     private List<Car> car;
 
 
