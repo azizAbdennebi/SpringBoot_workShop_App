@@ -15,9 +15,9 @@ public class Car {
     private Long id;
     private String brand;
 
-    @ManyToMany()
+   /* @ManyToMany()
     @JoinColumn(name = "person_id")
-    private List<Person> persons;
+    private List<Person> persons;*/
 
 
 

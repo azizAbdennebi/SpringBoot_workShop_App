@@ -14,6 +14,8 @@ public class Person {
     private Long id;
     @Column(name = "nom")
     private String name;
+
+    /*
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "car_Person",
     joinColumns=@JoinColumn(name = "car_Id" ,referencedColumnName = "id"),
@@ -21,7 +23,7 @@ public class Person {
             name = "person_Id",
             referencedColumnName = "id"
     ))
-    private List<Car> car;
+    private List<Car> car;*/
 
 
 
