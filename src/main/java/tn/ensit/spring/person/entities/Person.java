@@ -1,17 +1,29 @@
 package tn.ensit.spring.person.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import tn.ensit.spring.car.entities.Car;
+
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
+@Table(name = "personne")
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "nom")
     private String name;
+    @OneToOne
+    @JoinColumn(name = "car_id")
+    private Car car;
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
+    }
 
     public Person() {
 
