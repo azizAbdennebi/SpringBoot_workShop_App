@@ -14,7 +14,7 @@ public class Car {
     private Long id;
     private String brand;
 
-    @OneToOne
+    @ManyToOne()
     @JoinColumn(name = "person_id")
     private Person person;
 
