@@ -7,25 +7,20 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "personne")
+@Table(name = "voiture")
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long id;
-    private String brand;
+    private String model;
 
    /* @ManyToMany()
     @JoinColumn(name = "person_id")
     private List<Person> persons;*/
 
-
-
-    public Car() {
-    }
-
-    public String getBrand() {
-        return brand;
+    public String getModel() {
+        return model;
     }
 
     @Override
@@ -33,25 +28,21 @@ public class Car {
         if (this == o) return true;
         if (!(o instanceof Car)) return false;
         Car car = (Car) o;
-        return Objects.equals(getId(), car.getId()) && Objects.equals(getBrand(), car.getBrand());
-    }
-
-    @Override
-    public String toString() {
-        return "Car{" +
-                "id=" + id +
-                ", brand='" + brand + '\'' +
-                '}';
+        return Objects.equals(getId(), car.getId()) && Objects.equals(getModel(), car.getModel());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getBrand());
+        return Objects.hash(getId(), getModel());
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setModel(String model) {
+        this.model = model;
     }
+
+    public Car() {
+    }
+
 
     public Long getId() {
         return id;

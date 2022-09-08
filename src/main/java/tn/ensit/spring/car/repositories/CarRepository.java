@@ -6,5 +6,5 @@ import tn.ensit.spring.car.entities.Car;
 
 @Repository
 public interface CarRepository extends JpaRepository <Car, Long> {
-
+    Car findByModel(String model);
 }
